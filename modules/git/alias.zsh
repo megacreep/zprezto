@@ -95,10 +95,11 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias gfa='git fetch --all'
   alias gfc='git clone'
   alias gfcr='git clone --recurse-submodules'
-  alias gfm='git pull'
+  alias gfm='git-update-and-merge-master'
   alias gfma='git pull --autostash'
   alias gfr='git pull --rebase'
   alias gfra='git pull --rebase --autostash'
+  alias gfmm='git checkout master && git pull && clear'
 
   # Flow (F)
   alias gFi='git flow init'
@@ -172,7 +173,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias ggw='git grep --word-regexp'
 
   # Index (i)
-  alias gia='git add'
+  alias gia='git add .'
   alias giA='git add --patch'
   alias giu='git add --update'
   alias gid='git diff --no-ext-diff --cached'
@@ -185,7 +186,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias giX='git rm -r --force --cached'
 
   # Log (l)
-  alias gl='git log --topo-order --pretty=format:"$_git_log_medium_format"'
+  alias gl='git log --topo-order --pretty=format:"$_git_log_brief_format" --decorate --graph'
   alias gls='git log --topo-order --stat --pretty=format:"$_git_log_medium_format"'
   alias gld='git log --topo-order --stat --patch --full-diff --pretty=format:"$_git_log_medium_format"'
   alias glo='git log --topo-order --pretty=format:"$_git_log_oneline_format"'
@@ -217,6 +218,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias grc='git rebase --continue'
   alias gri='git rebase --interactive'
   alias grs='git rebase --skip'
+  alias grm='git rebase master'
 
   # Remote (R)
   alias gR='git remote'
@@ -232,16 +234,16 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   # Stash (s)
   alias gs='git stash'
   alias gsa='git stash apply'
-  alias gsx='git stash drop'
-  alias gsX='git-stash-clear-interactive'
-  alias gsl='git stash list'
-  alias gsL='git-stash-dropped'
-  alias gsd='git stash show --patch --stat'
-  alias gsp='git stash pop'
-  alias gsr='git-stash-recover'
-  alias gss='git stash save --include-untracked'
-  alias gsS='git stash save --patch --no-keep-index'
-  alias gsw='git stash save --include-untracked --keep-index'
+#  alias gsx='git stash drop'
+#  alias gsX='git-stash-clear-interactive'
+#  alias gsl='git stash list'
+#  alias gsL='git-stash-dropped'
+#  alias gsd='git stash show --patch --stat'
+#  alias gsp='git stash pop'
+#  alias gsr='git-stash-recover'
+#  alias gss='git stash save --include-untracked'
+#  alias gsS='git stash save --patch --no-keep-index'
+#  alias gsw='git stash save --include-untracked --keep-index'
 
   # Submodule (S)
   alias gS='git submodule'
@@ -266,6 +268,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias gwS='git status --ignore-submodules=$_git_status_ignore_submodules'
   alias gwd='git diff --no-ext-diff'
   alias gwD='git diff --no-ext-diff --word-diff'
+  alias gwH='git diff HEAD'
   alias gwr='git reset --soft'
   alias gwR='git reset --hard'
   alias gwc='git clean --dry-run'

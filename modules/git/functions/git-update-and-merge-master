@@ -1,0 +1,27 @@
+#
+# Displays the current Git branch.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# function git-update-and-merge-master {
+
+if ! command git rev-parse 2> /dev/null; then
+  print "$0: not a repository: $PWD" >&2
+  return 1
+fi
+
+local current_branch="$(git-branch-current 2> /dev/null)"
+
+if [[ -n "$current_branch" ]]; then
+  command git checkout master
+  command git pull
+  command git checkout "${current_branch}"
+  command git merge master
+  return 0
+else
+  return 1
+fi
+
+# }

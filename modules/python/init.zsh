@@ -66,6 +66,8 @@ function _python-workon-cwd {
     ENV_NAME="$(<$PROJECT_ROOT/.venv)"
   elif [[ -f "$PROJECT_ROOT/.venv/bin/activate" ]]; then
     ENV_NAME="$PROJECT_ROOT/.venv"
+  elif [[ -f "$PROJECT_ROOT/venv/bin/activate" ]]; then
+    ENV_NAME="$PROJECT_ROOT/venv"
   elif [[ $PROJECT_ROOT != "." ]]; then
     ENV_NAME="$PROJECT_ROOT:t"
   fi

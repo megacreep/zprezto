@@ -53,6 +53,7 @@ alias sftp='noglob sftp'
 # Define general aliases.
 alias _='sudo'
 alias b='${(z)BROWSER}'
+alias :q='exit'
 
 alias diffu="diff --unified"
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
