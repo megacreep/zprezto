@@ -258,7 +258,6 @@ if ! zstyle -t ':prezto:module:git:alias' skip; then
   alias gSx='git-submodule-remove'
 
   # Tag (t)
-  alias gt='git tag'
   alias gtl='git tag --list'
   alias gts='git tag --sign'
   alias gtv='git verify-tag'
